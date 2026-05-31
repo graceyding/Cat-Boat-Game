@@ -1,0 +1,7 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# https://docs.godotengine.org/en/stable/tutorials/best_practices/version_control_systems.html
+# I added
+*.translation
