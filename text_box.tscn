@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b28lwwf0dhiu6"]
+
+[node name="text_box" type="PanelContainer"]
+offset_right = 47.0
+offset_bottom = 47.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
