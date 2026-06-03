@@ -55,11 +55,13 @@ public partial class Player : CharacterBody2D
 	private void OnTubeCoralPull(Vector2 tubeVelocity)
 	{
 		velocityModifier = tubeVelocity;
+		GetNode<Godot.Timer>("TubeSwitchTimer").SetPaused(true);
 	}
 
 	//stop pulling the character when it leaves the AOE
 	private void OnTubeCoralUnpull()
 	{
 		velocityModifier = Vector2.Zero;
+		GetNode<Godot.Timer>("TubeSwitchTimer").SetPaused(false);
 	}
 }

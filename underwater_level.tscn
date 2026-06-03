@@ -1,28 +1,33 @@
-[gd_scene format=3 uid="uid://coy7ulbpfcrfe"]
+[gd_scene load_steps=6 format=3 uid="uid://coy7ulbpfcrfe"]
 
-[ext_resource type="Script" uid="uid://7u5jg48dq05p" path="res://UnderwaterLevel.cs" id="1_kc0kg"]
-[ext_resource type="Script" uid="uid://d1scxy16t25g6" path="res://TubesArea.cs" id="2_dijet"]
-[ext_resource type="PackedScene" uid="uid://bp4jat81a6c5d" path="res://tube_coral.tscn" id="3_wtt4d"]
+[ext_resource type="Script" path="res://UnderwaterLevel.cs" id="1_kc0kg"]
+[ext_resource type="Script" path="res://Timer.cs" id="2_d4n7r"]
+[ext_resource type="Script" path="res://TubesArea.cs" id="2_dijet"]
+[ext_resource type="PackedScene" uid="uid://s6tarn08548o" path="res://tube_coral.tscn" id="3_wtt4d"]
 [ext_resource type="PackedScene" uid="uid://djy0cxmipcbm6" path="res://player.tscn" id="5_tor4d"]
 
-[node name="Underwater_Level" type="Node2D" unique_id=2127206994]
+[node name="Underwater_Level" type="Node2D"]
 script = ExtResource("1_kc0kg")
 
-[node name="TubesArea" type="Node2D" parent="." unique_id=1745058721]
+[node name="TubesArea" type="Node2D" parent="."]
 script = ExtResource("2_dijet")
 
-[node name="TubeCoral" parent="TubesArea" unique_id=378082196 instance=ExtResource("3_wtt4d")]
+[node name="TubeSwitchTimer" type="Timer" parent="TubesArea"]
+script = ExtResource("2_d4n7r")
+
+[node name="TubeCoral" parent="TubesArea" instance=ExtResource("3_wtt4d")]
 position = Vector2(206, 587)
 
-[node name="TubeCoral2" parent="TubesArea" unique_id=1904593641 instance=ExtResource("3_wtt4d")]
-position = Vector2(418, 587)
+[node name="TubeCoral2" parent="TubesArea" instance=ExtResource("3_wtt4d")]
+position = Vector2(405, 586)
 
-[node name="TubeCoral3" parent="TubesArea" unique_id=2128305713 instance=ExtResource("3_wtt4d")]
+[node name="TubeCoral3" parent="TubesArea" instance=ExtResource("3_wtt4d")]
 position = Vector2(627, 588)
 
-[node name="Player" parent="TubesArea" unique_id=1561974240 instance=ExtResource("5_tor4d")]
+[node name="Player" parent="TubesArea" instance=ExtResource("5_tor4d")]
 position = Vector2(63, 339)
 
+[connection signal="timeout" from="TubesArea/TubeSwitchTimer" to="TubesArea/TubeCoral" method="OnTimerEnd"]
 [connection signal="Pull" from="TubesArea/TubeCoral" to="TubesArea/Player" method="OnTubeCoralPull"]
 [connection signal="Unpull" from="TubesArea/TubeCoral" to="TubesArea/Player" method="OnTubeCoralUnpull"]
 [connection signal="Pull" from="TubesArea/TubeCoral2" to="TubesArea/Player" method="OnTubeCoralPull"]
