@@ -16,6 +16,9 @@ public partial class Player : CharacterBody2D
 
 	//player flashing animation (when hit)
 	private Boolean flash;
+	
+	//determines player sitting position
+	private Boolean facingRight;
 
 	//stores velocity modifiers such as wind/tube coral pull
 	private Vector2 velocityModifier;
@@ -64,14 +67,22 @@ public partial class Player : CharacterBody2D
 		if (velocity.X < 0)
 		{
 			animatedSprite2D.Animation = "swim-left";
+			facingRight = false;
 		}
 		else if (velocity.X > 0)
 		{
 			animatedSprite2D.Animation = "swim-right";
+			facingRight = true;
 		}
 		else
 		{
-			animatedSprite2D.Animation = "sit-helmet";
+			if (facingRight) {
+				animatedSprite2D.Animation = "sit-helmet";
+			}
+			else {
+				//left animation
+			}
+			
 		}
 
 		//flashing
@@ -80,12 +91,12 @@ public partial class Player : CharacterBody2D
 		{
 			var modulate = animatedSprite2D.Modulate;
 			if (hurtTimer.TimeLeft % 0.2 < 0.1)
-            {
-                animatedSprite2D.Modulate = new Color(modulate.R, modulate.G, modulate.B, (float) 0.5);
+			{
+				animatedSprite2D.Modulate = new Color(modulate.R, modulate.G, modulate.B, (float) 0.5);
 			}
 			else
 			{
-                animatedSprite2D.Modulate = new Color(modulate.R, modulate.G, modulate.B, (float) 0);
+				animatedSprite2D.Modulate = new Color(modulate.R, modulate.G, modulate.B, (float) 0);
 			}
 		}
 

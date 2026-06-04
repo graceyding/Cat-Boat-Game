@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://djy0cxmipcbm6"]
+[gd_scene load_steps=11 format=3 uid="uid://djy0cxmipcbm6"]
 
-[ext_resource type="Script" uid="uid://cf8j8aoi3fxbf" path="res://Player.cs" id="1_vr4g2"]
+[ext_resource type="Script" path="res://Player.cs" id="1_vr4g2"]
 [ext_resource type="Texture2D" uid="uid://bgw8wor80bqch" path="res://assets/player-sprites/player_sit_helmet.png" id="2_1jxqw"]
 [ext_resource type="Texture2D" uid="uid://btciu8boqqq2p" path="res://icon.svg" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://b6jyn37imgoa8" path="res://assets/player-sprites/player_swim_left1.png" id="3_dw050"]
@@ -50,38 +50,38 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i86wa"]
-radius = 8.000002
-height = 16.000004
+radius = 8.0
+height = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jxqw"]
 size = Vector2(12, 13)
 
-[node name="Player" type="CharacterBody2D" unique_id=1983796530]
+[node name="Player" type="CharacterBody2D"]
 position = Vector2(84, 36)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_vr4g2")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=737781544]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_maa7k")
 animation = &"sit-helmet"
 
-[node name="CollisionCapsule" type="CollisionShape2D" parent="." unique_id=522087847]
-rotation = 4.712389
+[node name="CollisionCapsule" type="CollisionShape2D" parent="."]
+rotation = 4.71239
 shape = SubResource("CapsuleShape2D_i86wa")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=2132486777]
+[node name="Hurtbox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 4
 
-[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox" unique_id=198147907]
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_1jxqw")
-debug_color = Color(1, 0, 0, 0.41960785)
+debug_color = Color(1, 0, 0, 0.419608)
 
-[node name="HurtTimer" type="Timer" parent="." unique_id=727879036]
+[node name="HurtTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 

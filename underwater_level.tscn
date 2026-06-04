@@ -1,31 +1,27 @@
-[gd_scene format=3 uid="uid://coy7ulbpfcrfe"]
+[gd_scene load_steps=5 format=3 uid="uid://coy7ulbpfcrfe"]
 
-[ext_resource type="Script" uid="uid://7u5jg48dq05p" path="res://UnderwaterLevel.cs" id="1_kc0kg"]
-[ext_resource type="Script" uid="uid://d1scxy16t25g6" path="res://TubesArea.cs" id="2_dijet"]
+[ext_resource type="Script" path="res://UnderwaterLevel.cs" id="1_kc0kg"]
+[ext_resource type="Script" path="res://TubesArea.cs" id="2_dijet"]
 [ext_resource type="PackedScene" uid="uid://bp4jat81a6c5d" path="res://tube_coral.tscn" id="3_wtt4d"]
-[ext_resource type="PackedScene" uid="uid://dxgrd8fkvpx6l" path="res://hitbox.tscn" id="5_di0r2"]
 [ext_resource type="PackedScene" uid="uid://djy0cxmipcbm6" path="res://player.tscn" id="5_tor4d"]
 
-[node name="Underwater_Level" type="Node2D" unique_id=853025714]
+[node name="Underwater_Level" type="Node2D"]
 script = ExtResource("1_kc0kg")
 
-[node name="TubesArea" type="Node2D" parent="." unique_id=959336064]
+[node name="TubesArea" type="Node2D" parent="."]
 script = ExtResource("2_dijet")
 
-[node name="TubeCoral" parent="TubesArea" unique_id=747381781 instance=ExtResource("3_wtt4d")]
-position = Vector2(122, 141)
+[node name="TubeCoral" parent="TubesArea" instance=ExtResource("3_wtt4d")]
+position = Vector2(107, 146)
 
-[node name="TubeCoral2" parent="TubesArea" unique_id=1403264296 instance=ExtResource("3_wtt4d")]
-position = Vector2(181, 140)
+[node name="TubeCoral2" parent="TubesArea" instance=ExtResource("3_wtt4d")]
+position = Vector2(196, 145)
 
-[node name="TubeCoral3" parent="TubesArea" unique_id=1369161352 instance=ExtResource("3_wtt4d")]
-position = Vector2(241, 138)
+[node name="TubeCoral3" parent="TubesArea" instance=ExtResource("3_wtt4d")]
+position = Vector2(276, 146)
 
-[node name="Player" parent="TubesArea" unique_id=1271213814 instance=ExtResource("5_tor4d")]
-position = Vector2(49, 136)
-
-[node name="Hitbox" parent="TubesArea" unique_id=1507512691 instance=ExtResource("5_di0r2")]
-position = Vector2(62, 70)
+[node name="Player" parent="TubesArea" instance=ExtResource("5_tor4d")]
+position = Vector2(33, 72)
 
 [connection signal="Pull" from="TubesArea/TubeCoral" to="TubesArea/Player" method="OnTubeCoralPull"]
 [connection signal="Unpull" from="TubesArea/TubeCoral" to="TubesArea/Player" method="OnTubeCoralUnpull"]
