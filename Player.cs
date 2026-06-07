@@ -6,7 +6,7 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public int Speed {get; set;} = 200;
 	
-	public static int coins {get; set; } = 0;
+	public static int coins {get; set;} = 0;
 
 	//not sure if this should be private
 	public int hp;

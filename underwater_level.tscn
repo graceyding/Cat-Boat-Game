@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://coy7ulbpfcrfe"]
+[gd_scene load_steps=6 format=3 uid="uid://coy7ulbpfcrfe"]
 
 [ext_resource type="Script" path="res://UnderwaterLevel.cs" id="1_kc0kg"]
 [ext_resource type="Script" path="res://TubesArea.cs" id="2_dijet"]
 [ext_resource type="PackedScene" uid="uid://bp4jat81a6c5d" path="res://tube_coral.tscn" id="3_wtt4d"]
+[ext_resource type="PackedScene" uid="uid://tldupjugnwfm" path="res://walls.tscn" id="5_5la65"]
 [ext_resource type="PackedScene" uid="uid://djy0cxmipcbm6" path="res://player.tscn" id="5_tor4d"]
 
 [node name="Underwater_Level" type="Node2D"]
@@ -22,6 +23,9 @@ position = Vector2(276, 146)
 
 [node name="Player" parent="TubesArea" instance=ExtResource("5_tor4d")]
 position = Vector2(33, 72)
+
+[node name="Walls" parent="TubesArea" instance=ExtResource("5_5la65")]
+position = Vector2(-80, 39)
 
 [connection signal="Pull" from="TubesArea/TubeCoral" to="TubesArea/Player" method="OnTubeCoralPull"]
 [connection signal="Unpull" from="TubesArea/TubeCoral" to="TubesArea/Player" method="OnTubeCoralUnpull"]

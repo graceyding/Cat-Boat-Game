@@ -8,7 +8,7 @@
 [node name="Player" parent="." instance=ExtResource("1_bw4np")]
 
 [node name="TubeCoral" parent="." instance=ExtResource("2_ptwol")]
-position = Vector2(458, 401)
+position = Vector2(228, 83)
 
 [connection signal="Pull" from="TubeCoral" to="Player" method="OnTubeCoralPull"]
 [connection signal="Unpull" from="TubeCoral" to="Player" method="OnTubeCoralUnpull"]

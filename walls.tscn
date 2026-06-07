@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwqhvxhaoadjs"]
+[gd_scene load_steps=2 format=3 uid="uid://tldupjugnwfm"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eanae"]
-size = Vector2(117, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nno24"]
+size = Vector2(107, 20)
 
 [node name="Walls" type="StaticBody2D"]
-collision_mask = 3
+position = Vector2(59, 41)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(147, 166)
-shape = SubResource("RectangleShape2D_eanae")
+position = Vector2(104, 110)
+shape = SubResource("RectangleShape2D_nno24")
