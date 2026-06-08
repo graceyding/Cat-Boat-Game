@@ -86,6 +86,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
 position_smoothing_speed = 0.1
 drag_horizontal_enabled = true
 drag_vertical_enabled = true

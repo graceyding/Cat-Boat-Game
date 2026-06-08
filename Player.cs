@@ -6,7 +6,10 @@ public partial class Player : CharacterBody2D
 	[Export]
 	public int Speed {get; set;} = 200;
 	
-	public static int coins {get; set;} = 0;
+	public static int coins {get; set; } = 0;
+
+	//stores the vertical velocity modifier for underwater gravity
+	private static float underwaterGravityVelocity {get; set; } = 0.5F;
 
 	//not sure if this should be private
 	public int hp;
@@ -23,6 +26,15 @@ public partial class Player : CharacterBody2D
 	//stores velocity modifiers such as wind/tube coral pull
 	private Vector2 velocityModifier;
 
+	//stores possible gravity options
+	enum Gravity
+	{
+		Underwater, Air, None
+	}
+
+	//stores the current gravity type
+	Gravity gravity;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -31,6 +43,7 @@ public partial class Player : CharacterBody2D
 		hp = 2;
 		invulnerable = false;
 		flash = false;
+		gravity = Gravity.Underwater; //todo - change to update based on the player's room
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,6 +63,11 @@ public partial class Player : CharacterBody2D
 			velocity.Y -= 1;
 		}
 
+		//gravity and velocity modifier
+		if (gravity == Gravity.Underwater)
+		{
+			velocity.Y += underwaterGravityVelocity;
+		}
 		velocity = velocity.Normalized() + velocityModifier;
 	
 
