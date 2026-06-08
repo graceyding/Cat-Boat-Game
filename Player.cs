@@ -80,7 +80,7 @@ public partial class Player : CharacterBody2D
 				animatedSprite2D.Animation = "sit-helmet";
 			}
 			else {
-				//left animation
+				animatedSprite2D.Animation = "left_sit";
 			}
 			
 		}

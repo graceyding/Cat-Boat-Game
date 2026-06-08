@@ -12,6 +12,9 @@ script = ExtResource("1_kc0kg")
 [node name="TubesArea" type="Node2D" parent="."]
 script = ExtResource("2_dijet")
 
+[node name="Player" parent="TubesArea" instance=ExtResource("5_tor4d")]
+position = Vector2(33, 72)
+
 [node name="TubeCoral" parent="TubesArea" instance=ExtResource("3_wtt4d")]
 position = Vector2(107, 146)
 
@@ -20,9 +23,6 @@ position = Vector2(196, 145)
 
 [node name="TubeCoral3" parent="TubesArea" instance=ExtResource("3_wtt4d")]
 position = Vector2(276, 146)
-
-[node name="Player" parent="TubesArea" instance=ExtResource("5_tor4d")]
-position = Vector2(33, 72)
 
 [node name="Walls" parent="TubesArea" instance=ExtResource("5_5la65")]
 position = Vector2(-80, 39)
