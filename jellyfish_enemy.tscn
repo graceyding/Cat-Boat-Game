@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://clavypkcuqn7w"]
+
+[ext_resource type="Script" path="res://JellyfishEnemy.cs" id="1_ovn0n"]
+[ext_resource type="PackedScene" uid="uid://dxgrd8fkvpx6l" path="res://hitbox.tscn" id="2_t0apm"]
+
+[node name="JellyfishEnemy" type="Node2D"]
+position = Vector2(68, 86)
+script = ExtResource("1_ovn0n")
+metadata/_edit_group_ = true
+
+[node name="Hitbox" parent="." instance=ExtResource("2_t0apm")]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="OnTimerTimeout"]
