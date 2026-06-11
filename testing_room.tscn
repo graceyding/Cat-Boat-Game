@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://cs8lm72sbi1k8"]
+
+[ext_resource type="Texture2D" uid="uid://c5aconv8x8617" path="res://assets/backgrounds/first_room_background.png" id="1_3xtj5"]
+[ext_resource type="Texture2D" uid="uid://b6qt7sngx5gkb" path="res://assets/backgrounds/first_room_rocks.png" id="3_jxtuf"]
+[ext_resource type="PackedScene" uid="uid://thntib0y0eip" path="res://ground_player.tscn" id="3_lm6kq"]
+[ext_resource type="PackedScene" uid="uid://dhctxpw3i8rpf" path="res://darkness.tscn" id="5_o7pc6"]
+[ext_resource type="PackedScene" uid="uid://bjbcf5mwtvcgo" path="res://walls.tscn" id="5_y4j0h"]
+
+[node name="TestingRoom" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="Background" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(300, 90)
+texture = ExtResource("1_3xtj5")
+
+[node name="Rocks" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(300, 90)
+texture = ExtResource("3_jxtuf")
+
+[node name="GroundPlayer" parent="." instance=ExtResource("3_lm6kq")]
+position = Vector2(79, 100)
+
+[node name="Floor" parent="." instance=ExtResource("5_y4j0h")]
+position = Vector2(253, 157)
+scale = Vector2(25, 1)
+
+[node name="FloorThatOneRock" parent="." instance=ExtResource("5_y4j0h")]
+position = Vector2(129, 144)
+scale = Vector2(3, 1)
+
+[node name="Ceiling" parent="." instance=ExtResource("5_y4j0h")]
+position = Vector2(253, 22)
+scale = Vector2(25, 1)
+
+[node name="LeftWall" parent="." instance=ExtResource("5_y4j0h")]
+position = Vector2(-10, 90)
+scale = Vector2(1, 10)
+
+[node name="Darkness" parent="." instance=ExtResource("5_o7pc6")]
+z_as_relative = false

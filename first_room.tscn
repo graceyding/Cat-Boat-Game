@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://lgs85cdj7jme"]
+[gd_scene load_steps=6 format=3 uid="uid://bwbctyyj4cviq"]
 
 [ext_resource type="Texture2D" uid="uid://c5aconv8x8617" path="res://assets/backgrounds/first_room_background.png" id="1_u5hov"]
 [ext_resource type="PackedScene" uid="uid://qj5ya1dmxy7r" path="res://underwater_player.tscn" id="2_toxl5"]
 [ext_resource type="Texture2D" uid="uid://b6qt7sngx5gkb" path="res://assets/backgrounds/first_room_rocks.png" id="3_f3kxf"]
 [ext_resource type="PackedScene" uid="uid://b6tcj5pauo27d" path="res://fish_enemy.tscn" id="5_50yi7"]
-[ext_resource type="PackedScene" uid="uid://tldupjugnwfm" path="res://walls.tscn" id="6_pleqk"]
+[ext_resource type="PackedScene" uid="uid://bjbcf5mwtvcgo" path="res://walls.tscn" id="6_pleqk"]
 
 [node name="FirstRoom" type="Node2D"]
 metadata/_edit_group_ = true
@@ -42,5 +42,5 @@ position = Vector2(253, 22)
 scale = Vector2(25, 1)
 
 [node name="LeftWall" parent="." instance=ExtResource("6_pleqk")]
-position = Vector2(6, -1013)
+position = Vector2(-10, 90)
 scale = Vector2(1, 10)

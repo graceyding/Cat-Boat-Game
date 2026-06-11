@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://UnderwaterLevel.cs" id="1_kc0kg"]
 [ext_resource type="Script" path="res://TubesArea.cs" id="2_dijet"]
 [ext_resource type="PackedScene" uid="uid://bp4jat81a6c5d" path="res://tube_coral.tscn" id="3_wtt4d"]
-[ext_resource type="PackedScene" uid="uid://tldupjugnwfm" path="res://walls.tscn" id="5_5la65"]
+[ext_resource type="PackedScene" uid="uid://bjbcf5mwtvcgo" path="res://walls.tscn" id="5_5la65"]
 [ext_resource type="PackedScene" uid="uid://qj5ya1dmxy7r" path="res://underwater_player.tscn" id="6_21hq5"]
 
 [node name="Underwater_Level" type="Node"]

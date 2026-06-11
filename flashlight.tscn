@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://codqx6yrl1246"]
+
+[ext_resource type="Texture2D" uid="uid://cxpd4iiksamsx" path="res://assets/flashlight.png" id="1_3icum"]
+[ext_resource type="Script" path="res://Flashlight.cs" id="2_bnjar"]
+
+[node name="Flashlight" type="PointLight2D"]
+texture_filter = 1
+texture = ExtResource("1_3icum")
+offset = Vector2(70, 0)
+script = ExtResource("2_bnjar")
