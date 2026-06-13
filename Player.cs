@@ -145,7 +145,7 @@ public partial class Player : CharacterBody2D
 		EmitSignal(SignalName.Hit, hp);
 	}
 	
-	private async void Respawn() {
+	public async void Respawn() {
 		var fader = GetNode<CanvasLayer>("/root/Fader");
 		if (fader is Fader transition) {
 			await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);

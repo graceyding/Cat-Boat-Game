@@ -72,5 +72,12 @@ public partial class GroundPlayer : Player
 			Velocity = dir;
 			MoveAndSlide();
 		}
+		OOBCheck();
+	}
+	private void OOBCheck() {
+		var pos = GlobalPosition;
+		if (GetParent().Name == "EnterCaveRoom" && pos.Y > 180) {
+			base.Respawn();
+		}
 	}
 }
